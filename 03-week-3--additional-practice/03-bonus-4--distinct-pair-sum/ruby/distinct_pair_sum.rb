@@ -1,5 +1,19 @@
 def distinct_pair_sum(arr, k)
   # type your code in here
+  solutions = []
+  i = 0;
+  
+  while(i < arr.length)
+    if arr.slice(i+1, arr.length).include?(k - arr[i])
+      solution = [arr[i], k - arr[i]]
+      reverseSolution = [k - arr[i], arr[i]]
+      solutions.push(solution) unless solutions.include?(solution) || solutions.include?(reverseSolution)
+    end
+    i += 1
+  end
+
+  solutions
+
 end
 
 if __FILE__ == $PROGRAM_NAME
