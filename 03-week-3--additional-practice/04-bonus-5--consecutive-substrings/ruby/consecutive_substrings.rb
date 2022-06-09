@@ -1,5 +1,17 @@
 def consecutive_substrings(string)
   # type your code in here
+  i = 0
+  subs = []
+  while(i < string.length)
+    subs << string[i]
+    j = i+1
+    while( j < string.length)
+      subs << string[i..j]
+      j +=1
+    end
+    i +=1
+  end
+  subs
 end
 
 if __FILE__ == $PROGRAM_NAME
